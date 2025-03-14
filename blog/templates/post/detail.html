@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Публикация | {{ post.title }}}
+{% endblock %}
+
+{% block content %}
+    {% if request.user.is_staff %}
+        <div class="row">
+            <div class="col-12 mx-auto mt-5 text-center">
+                <span class="text-muted mr-3">ADMIN:</span>
+                <a href="{{ post.get_delete_url }}" class="btn btn-danger">Удалить</a>
+                <a href="{{ post.get_update_url }}" class="btn btn-warning">Править</a>
+            </div>
+        </div>
+    {% endif %}
+
+    <h2 class="mt-5 text-center">{{ post.title }}</h2>
+    <div class="card mw-100 mx-auto mt-3 mb-3 border-0">
+        <div class="card-body">
+            <p class="card-text">{{ post.text }}</p>
+        </div>
+    </div>
+    {#    <h3>Комментарии:</h3>#}
+    {#    <div class="comments mt-3 bo">#}
+    {#          {% for comment in post.comments.all %}#}
+    {#              <div class="card w-50 p-3">#}
+    {#                  <h6 class="card-title">{{ comment.first_name }} {{ comment.last_name }}</h6>#}
+    {#                  <p class="card-text">{{ comment.comment_text }}</p>#}
+    {#              </div>#}
+    {#          {% endfor %}#}
+    {#      </div>#}
+{% endblock %}

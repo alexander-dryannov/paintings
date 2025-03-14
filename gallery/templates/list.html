@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="text-center mt-5 mb-5">Галерея</h2>
+    {% if request.user.is_staff %}
+        <div class="row">
+            <div class="col-12 mx-auto mb-5 text-center">
+                <span class="text-muted mr-3">ADMIN:</span>
+                <a href="{% url 'gallery:create' %}" class="btn btn-primary">
+                    Добавить картину
+                </a>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row justify-content-center">
+        <div class="grid gallery--responsive-images" data-masonry='{ "itemSelector": ".grid-item", "isFitWidth": true }'>
+            <div class="pswp-gallery pswp-gallery--single-column">
+                {% for painting in paintings %}
+                    <a href="{{ painting.image.url }}" data-pswp-width="{{ painting.width }}"
+                       data-pswp-height="{{ painting.height }}" target="_blank">
+                        <img class="grid-item painting" src="{{ painting.image.url }}" alt=""/>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

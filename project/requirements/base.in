@@ -1,0 +1,10 @@
+crispy-bootstrap5==2024.2
+Django==5.0.6
+django-allauth==0.63.3
+django-crispy-forms==2.2
+django-solo==2.2.0
+gunicorn==22.0.0
+flake8==7.1.0
+isort==5.13.2
+Pillow==10.3.0
+python-dotenv==1.0.1

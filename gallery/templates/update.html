@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+      <h2 class="text-center mt-5 mb-5">Редактирование картины</h2>
+      <div class="col-12">
+        <form class="w-75 mx-auto" action="" method="post">
+          {% csrf_token %}
+          {{ form.media }}
+          {{ form|crispy }}
+          <a href="{% url 'gallery:list' %}" class="btn btn-secondary">Отмена</a>
+          <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+      </div>
+    </div>
+{% endblock %}

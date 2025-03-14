@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Публикации | Удаление
+{% endblock %}
+
+{% block content %}
+    <div class="card w-50 mx-auto mt-5">
+        <div class="card-body text-center">
+            <p class="card-text">Удалить пост <b>{{ post.title }}</b>?</p>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <a href="{{ post.get_absolute_url }}" class="btn btn-secondary">Отмена</a>
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
