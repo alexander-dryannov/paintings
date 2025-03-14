@@ -13,7 +13,8 @@
         </div>
     {% endif %}
     <div class="row justify-content-center">
-        <div class="grid gallery--responsive-images" data-masonry='{ "itemSelector": ".grid-item", "isFitWidth": true }'>
+        <div class="grid gallery--responsive-images"
+             data-masonry='{ "itemSelector": ".grid-item", "isFitWidth": true }'>
             <div class="pswp-gallery pswp-gallery--single-column">
                 {% for painting in paintings %}
                     <a href="{{ painting.image.url }}" data-pswp-width="{{ painting.width }}"

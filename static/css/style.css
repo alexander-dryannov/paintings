@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Marck+Script&display=swap");
 html, body {
-  background: -webkit-linear-gradient(90deg, #bbe520, #f6b283);
   background: linear-gradient(90deg, #bbe520, #f6b283);
 }
 
@@ -13,7 +12,7 @@ html, body {
 }
 
 .painting {
-  padding: 2px;
+  padding: 0.16rem;
   width: 300px;
 }
 
@@ -33,6 +32,4 @@ html, body {
 }
 .nav-link:hover {
   color: #0e5df7;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
